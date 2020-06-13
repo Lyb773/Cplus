@@ -1,28 +1,37 @@
 // MyFirstProgram.cpp : ...
 // Lyb773
 
-#include "stdafx.h"
 #include <iostream>
+#include <math.h>
 
 using namespace std;
 
-int main()
+int getValue()
 {
-	int a,b,c,discriminant;
-	cout << "a: ";
-	cin >> a;
-	cout << "b: ";
-	cin >> b;
-	cout << "c: ";
-	cin >> c;
-	discriminant = pow(b, 2) - (4 * a * c);
-	cout << "Discriminant = " << discriminant << endl;
-	if (discriminant > 0)
+    int num;
+    cout << "Input a value: ";
+    cin >> num;
+    return num ;
+}
+
+void discriminant(int a, int b , int c)
+{
+    double discri;
+    discri = pow(b, 2) - (4 * a * c);
+    if (discri > 0)
 		cout << "2 distinct real roots";
-	else if (discriminant == 0)
+	else if (discri == 0)
 		cout << "1 Common root";
 	else
 		cout << "No real roots";
-	return 0;
+}
+
+int main()
+{
+    int a{ getValue() };
+    int b{ getValue() };
+    int c{ getValue() };
+    discriminant(a, b, c);
+    return 0;
 }
 
