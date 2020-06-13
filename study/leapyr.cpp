@@ -1,22 +1,33 @@
 // MyFirstProgram.cpp : ...
 // Lyb773
 
-#include "stdafx.h"
 #include <iostream>
+#include <math.h>
 
 using namespace std;
 
+int getYear()
+{
+    int year;
+    cout << "Years? ";
+    cin >> year;
+    return year;
+}
+
+void isleap(int yr)
+{
+    if (yr % 400 == 0)
+		cout << yr << " is a leap year.";
+	else if ((yr % 4 == 0) && (yr % 100 != 0))
+		cout << yr << " is a leap year.";
+	else
+		cout << yr << " is a common year.";
+}
+
 int main()
 {
-	int year;
-	cout << "Year? ";
-	cin >> year;
-	if (year % 400 == 0)
-		cout << year << " is a leap year.";
-	else if ((year % 4 == 0) && (year % 100 != 0))
-		cout << year << " is a leap year.";
-	else
-		cout << year << " is a common year.";
-	return 0;
+    int y{ getYear() };
+    isleap(y);
+    return 0;
 }
 
