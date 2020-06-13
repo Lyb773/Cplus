@@ -1,34 +1,48 @@
 // MyFirstProgram.cpp : ...
 // Lyb773
 
-#include "stdafx.h"
 #include <iostream>
 
 using namespace std;
 
+int getValue()
+{
+    int selection;
+    cout << "Which payment method? " << endl;
+	cout << "1 - Cash" << endl;
+	cout << "2 - EPS" << endl;
+	cout << "3 - UnionPay" << endl;
+    cout << "4 - Visa/Master" << endl;
+	cout << endl << "Your choice -> ";
+	cin >> selection;
+    return selection;
+}
+
+void paymentMethod(int i)
+{
+    switch(i)
+    {
+        case 1:
+            cout << endl << "Cash";
+            break;
+        case 2:
+            cout << endl << "EPS";
+            break;
+        case 3:
+            cout << endl << "UnionPay";
+            break;
+        case 4:
+            cout << endl << "Visa/Master card";
+            break;
+        default:
+            cout << endl << "Incorrect input";
+            break;
+    }
+}
+
 int main()
 {
-	int method;
-	cout << "Which set? " << endl;
-	cout << "1 - McChicken" << endl;
-	cout << "2 - McFish" << endl;
-	cout << "3 - BigMac" << endl;
-	cout << endl << "Your choice -> ";
-	cin >> method;
-	switch (method)
-	{
-	case 1:
-		cout << endl << "You have selected McChicken.";
-		break;
-	case 2:
-		cout << endl << "You have selected McFish.";
-		break;
-	case 3:
-		cout << endl << "You have selected BigMac.";
-		break;
-	default:
-		cout << endl << "Incorrect input!!";
-		break;
-	}
-	return 0;
+    int x{ getValue() };
+    paymentMethod(x);
+    return 0;
 }
